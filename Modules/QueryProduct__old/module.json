@@ -1,0 +1,10 @@
+{
+    "name": "QueryProduct",
+    "alias": "queryproduct",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,9 @@
+{
+    "name": "QueryProduct",
+    "alias": "queryproduct",
+    "description": "The FleetCart QueryProduct Module.",
+    "order": 100,
+    "providers": [
+        "Modules\\QueryProduct\\Providers\\QueryProductServiceProvider"
+    ]
+}

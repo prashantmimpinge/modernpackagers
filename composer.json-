@@ -1,0 +1,10 @@
+{
+    "config": {
+        "allow-plugins": {
+            "wikimedia/composer-merge-plugin": true
+        }
+    },
+    "require": {
+        "laravel/socialite": "^5.5"
+    }
+}

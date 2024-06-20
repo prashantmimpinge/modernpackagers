@@ -1,0 +1,25 @@
+{
+    "name": "fleetcart/queryproduct",
+    "description": "",
+    "authors": [
+        {
+            "name": "Mehedi Hasan",
+            "email": "mehedi5531@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\QueryProduct\\Providers\\QueryProductServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\QueryProduct\\": ""
+        }
+    }
+}
