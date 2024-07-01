@@ -40,6 +40,7 @@ class SaveProductRequest extends Request
             'in_stock' => 'required|boolean',
             'new_from' => 'nullable|date',
             'new_to' => 'nullable|date',
+            'discount' => 'required|numeric|min:0|max:100',
         ];
     }
 

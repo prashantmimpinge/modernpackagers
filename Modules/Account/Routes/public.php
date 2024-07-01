@@ -14,4 +14,7 @@ Route::middleware('auth')->group(function () {
     Route::get('account/wishlist', 'AccountWishlistController@index')->name('account.wishlist.index');
 
     Route::get('account/reviews', 'AccountReviewController@index')->name('account.reviews.index');
+
+    Route::get('account/myproducts', 'AccountMyProductsController@index')->name('account.products.myproducts');
+
 });

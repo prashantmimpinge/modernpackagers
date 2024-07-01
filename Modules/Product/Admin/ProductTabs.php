@@ -19,7 +19,8 @@ class ProductTabs extends Tabs
             ->add($this->price())
             ->add($this->inventory())
             ->add($this->images())
-            ->add($this->seo());
+            ->add($this->seo())
+            ->add($this->b2b());
 
         $this->group('advanced_information', trans('product::products.tabs.group.advanced_information'))
             ->add($this->relatedProducts())
@@ -130,6 +131,13 @@ class ProductTabs extends Tabs
             $tab->weight(55);
             $tab->fields(['new_from', 'new_to']);
             $tab->view('product::admin.products.tabs.additional');
+        });
+    }
+    private function b2b()
+    {
+       return tap(new Tab('b2b', trans('product::products.tabs.b2b')), function (Tab $tab) {
+            $tab->weight(55);
+            $tab->view('product::admin.products.tabs.b2b');
         });
     }
 }

@@ -22,6 +22,7 @@ return [
         'up_sells' => 'Up-Sells',
         'cross_sells' => 'Cross-Sells',
         'additional' => 'Additional',
+        "b2b" => "B2B"
     ],
     'form' => [
         'enable_the_product' => 'Enable the product',

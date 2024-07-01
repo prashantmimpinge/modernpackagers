@@ -51,12 +51,21 @@
                             </a>
                         </li>
 
+                        <li class="{{ request()->routeIs('account.products.myproducts') ? 'active' : '' }}">
+                            <a href="{{ route('account.products.myproducts') }}">
+                                <i class="las la-sign-out-alt"></i>
+                                {{ trans('storefront::account.pages.my_products') }}
+                            </a>
+                        </li>
+
                         <li>
                             <a href="{{ route('logout') }}">
                                 <i class="las la-sign-out-alt"></i>
                                 {{ trans('storefront::account.pages.logout') }}
                             </a>
                         </li>
+
+
                     </ul>
                 </div>
 

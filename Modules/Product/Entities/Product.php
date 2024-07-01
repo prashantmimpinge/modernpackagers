@@ -60,6 +60,10 @@ class Product extends Model
         'is_active',
         'new_from',
         'new_to',
+        'b_2_b',
+        'discount',
+        'users',
+        'pMinQty'
     ];
 
     /**
@@ -122,6 +126,7 @@ class Product extends Model
         static::saved(function ($product) {
             if (! empty(request()->all())) {
                 $product->saveRelations(request()->all());
+                // dd(request()->all());
             }
 
             $product->withoutEvents(function () use ($product) {

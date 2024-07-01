@@ -13,6 +13,7 @@ return [
         'my_reviews' => 'My Reviews',
         'my_profile' => 'My Profile',
         'logout' => 'Logout',
+        'my_products' => "My Products"
     ],
     'dashboard' => [
         'recent_orders' => 'Recent Orders',

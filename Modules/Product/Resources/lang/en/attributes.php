@@ -23,4 +23,8 @@ return [
     'new_from' => 'Product New From',
     'new_to' => 'Product New To',
     'is_reviewable' => 'Reviewable',
+    'b_2_b' => "B2B",
+    'discount' => "COD Allow (%)",
+    'users' => "Customer Id",
+    'pMinQty' => "Product Min Qty"
 ];
