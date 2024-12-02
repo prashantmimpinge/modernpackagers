@@ -49,6 +49,7 @@
     45 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     46 => 'FleetCart\\Providers\\AppServiceProvider',
     47 => 'FleetCart\\Providers\\RouteServiceProvider',
+    48 => 'Modules\\Customer\\Providers\\CustomerServiceProvider',
   ),
   'eager' => 
   array (
@@ -84,6 +85,7 @@
     29 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     30 => 'FleetCart\\Providers\\AppServiceProvider',
     31 => 'FleetCart\\Providers\\RouteServiceProvider',
+    32 => 'Modules\\Customer\\Providers\\CustomerServiceProvider',
   ),
   'deferred' => 
   array (

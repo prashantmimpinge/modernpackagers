@@ -6,7 +6,7 @@ import { notify, trans, chunk } from './functions';
 import VueToast from 'vue-toast-notification';
 import vClickOutside from 'v-click-outside';
 import VPagination from './components/VPagination.vue';
-import HeaderSearch from './components/layout/HeaderSearch.vue';
+// import HeaderSearch from './components/layout/HeaderSearch.vue';
 import SidebarCart from './components/layout/SidebarCart';
 import NewsletterPopup from './components/layout/NewsletterPopup';
 import NewsletterSubscription from './components/layout/NewsletterSubscription';
@@ -45,7 +45,7 @@ Vue.use(VueToast);
 Vue.use(vClickOutside);
 
 Vue.component('v-pagination', VPagination);
-Vue.component('header-search', HeaderSearch);
+// Vue.component('header-search', HeaderSearch);
 Vue.component('sidebar-cart', SidebarCart);
 Vue.component('newsletter-popup', NewsletterPopup);
 Vue.component('newsletter-subscription', NewsletterSubscription);

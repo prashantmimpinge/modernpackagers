@@ -1,21 +1,6 @@
 <template>
     <section class="landscape-tab-products-wrap clearfix">
         <div class="container">
-            <div class="tab-products-header clearfix">
-                <h5 class="section-title float-left">{{ data.title }}</h5>
-
-                <ul class="tabs float-right">
-                    <li
-                        v-for="(tab, index) in tabs"
-                        :key="index"
-                        :class="classes(tab)"
-                        @click="change(tab)"
-                    >
-                        {{ tab.label }}
-                    </li>
-                </ul>
-            </div>
-
             <div class="tab-content landscape-right-tab-products">
                 <ProductCard v-for="product in products" :key="product.id" :product="product"/>
             </div>

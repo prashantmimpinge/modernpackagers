@@ -1,30 +1,19 @@
 <template>
     <section class="landscape-tab-products-wrap clearfix">
         <div class="container">
-            <div class="tab-products-header clearfix">
-                <ul class="tabs float-left">
-                    <li
-                        v-for="(tab, index) in tabs"
-                        :key="index"
-                        :class="classes(tab)"
-                        @click="change(tab)"
-                    >
-                        {{ tab.label }}
-                    </li>
-                </ul>
-            </div>
+            <div class="row">
+                <div class="col-md-12 mt-4 d-flex justify-content-between card-flex landscape-left-tab-products">
+                    <ProductCard v-for="product in products" :key="product.id" :product="product"/>
+                </div>
 
-            <div class="tab-content landscape-left-tab-products">
-                <ProductCard v-for="product in products" :key="product.id" :product="product"/>
+                <dynamic-tab
+                    v-for="(tabLabel, index) in data"
+                    :key="index"
+                    :label="tabLabel"
+                    :url="route('storefront.tab_products.index', { sectionNumber: 1, tabNumber: index + 1 })"
+                >
+                </dynamic-tab>
             </div>
-
-            <dynamic-tab
-                v-for="(tabLabel, index) in data"
-                :key="index"
-                :label="tabLabel"
-                :url="route('storefront.tab_products.index', { sectionNumber: 1, tabNumber: index + 1 })"
-            >
-            </dynamic-tab>
         </div>
     </section>
 </template>

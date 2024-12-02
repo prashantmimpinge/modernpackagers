@@ -179,6 +179,7 @@ return [
          */
         FleetCart\Providers\AppServiceProvider::class,
         FleetCart\Providers\RouteServiceProvider::class,
+        Modules\Customer\Providers\CustomerServiceProvider::class,
     ],
 
     /*

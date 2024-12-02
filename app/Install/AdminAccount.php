@@ -92,6 +92,11 @@ class AdminAccount
             'admin.flash_sales.create' => true,
             'admin.flash_sales.edit' => true,
             'admin.flash_sales.destroy' => true,
+            // customers
+            'admin.customers.index' => true,
+            'admin.flash_sales.create' => true,
+            'admin.flash_sales.edit' => true,
+            'admin.flash_sales.destroy' => true,
             // transactions
             'admin.transactions.index' => true,
             // coupons

@@ -1,0 +1,9 @@
+{
+    "name": "Customer",
+    "alias": "customer",
+    "description": "The FleetCart Customer Module.",
+    "order": 100,
+    "providers": [
+        "Modules\\Customer\\Providers\\CustomerServiceProvider"
+    ]
+}

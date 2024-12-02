@@ -1,77 +1,33 @@
 <template>
-    <div class="product-card">
-        <div class="product-card-top">
-            <a :href="productUrl" class="product-image">
-                <img :src="baseImage" :class="{ 'image-placeholder': ! hasBaseImage }" alt="product image">
-            </a>
-
-            <div class="product-card-actions">
-                <button
-                    class="btn btn-wishlist"
-                    :class="{ 'added': inWishlist }"
-                    :title="$trans('storefront::product_card.wishlist')"
-                    @click="syncWishlist"
-                >
-                    <i class="la-heart" :class="inWishlist ? 'las' : 'lar'"></i>
+    <div class="product-card card-box mb-4">
+        <div class="card h-100 text-center">
+            <div class="in-col position-relative rounded">
+                <button class="wish-col badge bg-body position-absolute top-0 m-2 end-0 rounded-circle" :class="{ 'added': inWishlist }"
+                        :title="$trans('storefront::product_card.wishlist')"
+                        @click="syncWishlist">
+                    <i class="icon-heart-o"></i>
                 </button>
-
+                <a :href="productUrl" class="view-col badge bg-body position-absolute top-0 mt-4 end-0 rounded-circle">
+                    <i class="fa-regular fa-eye"></i>
+                </a>
+                <img :src="baseImage" class="card-in-img" :class="{ 'image-placeholder': ! hasBaseImage }" alt="product image">
                 <button
-                    class="btn btn-compare"
-                    :class="{ 'added': inCompareList }"
-                    :title="$trans('storefront::product_card.compare')"
-                    @click="syncCompareList"
+                    v-if="hasNoOption || product.is_out_of_stock"
+                    class="add-cart btn btn-sm btn-danger rounded-bottom w-100"
+                    :class="{ 'btn-loading': addingToCart }"
+                    :disabled="product.is_out_of_stock"
+                    @click="addToCart"
                 >
-                    <i class="las la-random"></i>
+                    {{ $trans('storefront::product_card.add_to_cart') }}
                 </button>
             </div>
-
-            <ul class="list-inline product-badge">
-                <li class="badge badge-danger" v-if="product.is_out_of_stock">
-                    {{ $trans('storefront::product_card.out_of_stock') }}
-                </li>
-
-                <li class="badge badge-primary" v-else-if="product.is_new">
-                    {{ $trans('storefront::product_card.new') }}
-                </li>
-
-                <li class="badge badge-success" v-if="product.has_percentage_special_price">
-                    -{{ product.special_price_percent }}%
-                </li>
-            </ul>
-        </div>
-
-        <div class="product-card-middle">
-            <ProductRating :ratingPercent="product.rating_percent" :reviewCount="product.reviews.length"/>
-
-            <a :href="productUrl" class="product-name">
+            <div class="card-text mt-2">
                 <h6>{{ product.name }}</h6>
-            </a>
-
-            <div class="product-price product-price-clone" v-html="product.formatted_price"></div>
-        </div>
-
-        <div class="product-card-bottom">
-            <div class="product-price" v-html="product.formatted_price"></div>
-
-            <button
-                v-if="hasNoOption || product.is_out_of_stock"
-                class="btn btn-primary btn-add-to-cart"
-                :class="{ 'btn-loading': addingToCart }"
-                :disabled="product.is_out_of_stock"
-                @click="addToCart"
-            >
-                <i class="las la-cart-arrow-down"></i>
-                {{ $trans('storefront::product_card.add_to_cart') }}
-            </button>
-
-            <a
-                v-else
-                :href="productUrl"
-                class="btn btn-primary btn-add-to-cart"
-            >
-                <i class="las la-eye"></i>
-                {{ $trans('storefront::product_card.view_options') }}
-            </a>
+                <p class="my-1" v-html="product.formatted_price"></p>
+                <div class="star-icon mt-1 d-flex align-items-center">
+                    <ProductRating :ratingPercent="product.rating_percent" :reviewCount="product.reviews.length"/>
+                </div>
+            </div>
         </div>
     </div>
 </template>

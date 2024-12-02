@@ -24,7 +24,14 @@
         @endif
         <link rel="stylesheet" href="{{ v(Theme::url('public/css/intlTelInput.css')) }}">
         <link rel="stylesheet" href="{{ v(Theme::url('public/css/isValidNumber.css')) }}">
-        <link rel="shortcut icon" href="{{ $favicon }}" type="image/x-icon">
+        <!-- <link rel="shortcut icon" href="{{ $favicon }}" type="image/x-icon"> -->
+        <link rel="icon" type="image/x-icon" href="{{ v(Theme::url('public/images/favicon.png')) }}">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ v(Theme::url('public/css/owl.carousel.css')) }}">
+        <!-- Main CSS File -->
+        <link rel="stylesheet" href="{{ v(Theme::url('public/css/style.css')) }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <style type="text/css">
             #zipcodeError{
                 display: none;
@@ -130,15 +137,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
         <div class="wrapper" id="app">
-            @include('public.layout.top_nav')
-            @include('public.layout.header')
+            @include('public.layout.new_header')
+            <main class="main">
+            <!-- @include('public.layout.header')
             @include('public.layout.navigation')
-            @include('public.layout.breadcrumb')
+            @include('public.layout.breadcrumb') -->
 
             @yield('content')
 
             @include('public.home.sections.subscribe')
-            @include('public.layout.footer')
+            <!-- @include('public.layout.footer') -->
+            @include('public.layout.new_footer')
 
             <div class="overlay"></div>
 
@@ -153,6 +162,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <script src="{{ v(Theme::url('public/js/app.js')) }}"></script>
          <script src="{{ v(Theme::url('public/js/intlTelInput.js')) }}"></script>
+         <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+         
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="{{ v(Theme::url('public/js/owl.carousel.min.js')) }}"></script>
+
+        <!-- Main JS File -->
+        <script src="{{ v(Theme::url('public/js/main.js')) }}"></script>
 
         @stack('scripts')
 

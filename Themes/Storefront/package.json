@@ -3,28 +3,39 @@
     "private": true,
     "scripts": {
         "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "rtlcss": "rtlcss ./assets/admin/css/storefront.css ./assets/admin/css/storefront.rtl.css"
     },
     "devDependencies": {
         "animate.css": "^3.7.2",
+        "babel-loader": "^9.1.3",
         "bootstrap": "^4.3.1",
+        "css-loader": "^7.1.2",
         "flatpickr": "^4.6.3",
         "jquery": "^3.4.1",
         "jquery-nice-select": "^1.1.0",
         "jquery-zoom": "^1.7.21",
+        "laravel-mix": "^6.0.49",
         "line-awesome": "^1.3.0",
         "nouislider": "^14.1.1",
         "popper.js": "^1.15.0",
-        "rtlcss": "^2.4.0",
+        "resolve-url-loader": "^5.0.0",
+        "rtlcss": "^2.6.2",
+        "sass-loader": "^16.0.1",
         "slick-carousel": "^1.8.1",
         "slick-lightbox": "^0.2.12",
+        "style-loader": "^4.0.0",
         "v-click-outside": "^3.0.1",
-        "vue": "^2.6.11",
-        "vue-toast-notification": "^0.0.3"
+        "vue": "^2.7.16",
+        "vue-loader": "^15.11.1",
+        "vue-template-compiler": "^2.7.16",
+        "vue-toast-notification": "^0.0.3",
+        "webpack": "^5.94.0",
+        "webpack-cli": "^5.1.4"
     }
 }
